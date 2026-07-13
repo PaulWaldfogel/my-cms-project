@@ -1,1 +1,19 @@
 
+# ... (keep your existing backend, media_folder, and blog collections here)
+
+collections:
+  - name: "blog"
+    # ... (your existing blog configuration)
+
+  - name: "ai_playground"
+    label: "AI Playground"
+    folder: "my-ai-playground" # This points exactly to your new folder
+    create: true # Allows you to create new files from the CMS UI
+    extension: "md" # Saves data as JSON (or use "md" for Markdown)
+    format: "md"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Prompt Used", name: "prompt", widget: "text" }
+      - { label: "AI Output / Code", name: "output", widget: "code", default_language: "javascript" }
+      - { label: "Date Created", name: "date", widget: "datetime" }
